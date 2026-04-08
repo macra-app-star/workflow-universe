@@ -1041,7 +1041,7 @@
             <span class="integration-badge">LangChain</span>
             <span class="integration-badge">Supabase</span>
           </div>
-          <a href="https://workflowuniverse.gumroad.com/l/ai-agent-powerpack" target="_blank" rel="noopener" class="buy-btn" data-pack="ai-agent-powerpack">Buy Now &mdash; $49</a>
+          <a href="https://workflowuniverse.gumroad.com/l/ai-agent-powerpack" rel="noopener" class="buy-btn gumroad-button" data-pack="ai-agent-powerpack">Buy Now &mdash; $49</a>
         </div>
 
         <!-- Pack 2 -->
@@ -1059,7 +1059,7 @@
             <span class="integration-badge">Google Analytics</span>
             <span class="integration-badge">Ahrefs</span>
           </div>
-          <a href="https://workflowuniverse.gumroad.com/l/marketing-suite" target="_blank" rel="noopener" class="buy-btn" data-pack="marketing-automation-suite">Buy Now &mdash; $39</a>
+          <a href="https://workflowuniverse.gumroad.com/l/marketing-suite" rel="noopener" class="buy-btn gumroad-button" data-pack="marketing-automation-suite">Buy Now &mdash; $39</a>
         </div>
 
         <!-- Pack 3 -->
@@ -1077,7 +1077,7 @@
             <span class="integration-badge">LinkedIn</span>
             <span class="integration-badge">Pipedrive</span>
           </div>
-          <a href="https://workflowuniverse.gumroad.com/l/sales-lead-gen" target="_blank" rel="noopener" class="buy-btn" data-pack="sales-lead-gen-machine">Buy Now &mdash; $39</a>
+          <a href="https://workflowuniverse.gumroad.com/l/sales-lead-gen" rel="noopener" class="buy-btn gumroad-button" data-pack="sales-lead-gen-machine">Buy Now &mdash; $39</a>
         </div>
 
         <!-- Pack 4 -->
@@ -1094,7 +1094,7 @@
             <span class="integration-badge">Notion</span>
             <span class="integration-badge">PostgreSQL</span>
           </div>
-          <a href="https://workflowuniverse.gumroad.com/l/data-ops" target="_blank" rel="noopener" class="buy-btn" data-pack="data-ops-toolkit">Buy Now &mdash; $29</a>
+          <a href="https://workflowuniverse.gumroad.com/l/data-ops" rel="noopener" class="buy-btn gumroad-button" data-pack="data-ops-toolkit">Buy Now &mdash; $29</a>
         </div>
 
         <!-- Pack 5 -->
@@ -1112,7 +1112,7 @@
             <span class="integration-badge">PagerDuty</span>
             <span class="integration-badge">AWS</span>
           </div>
-          <a href="https://workflowuniverse.gumroad.com/l/devops-bundle" target="_blank" rel="noopener" class="buy-btn" data-pack="devops-monitoring-bundle">Buy Now &mdash; $29</a>
+          <a href="https://workflowuniverse.gumroad.com/l/devops-bundle" rel="noopener" class="buy-btn gumroad-button" data-pack="devops-monitoring-bundle">Buy Now &mdash; $29</a>
         </div>
 
       </div>
@@ -1130,7 +1130,7 @@
           <span class="collection-original">$185</span>
         </div>
         <p class="collection-savings">All 120 workflows from every pack. 47% off.</p>
-        <a href="https://workflowuniverse.gumroad.com/l/complete-collection" target="_blank" rel="noopener" class="collection-btn">
+        <a href="https://workflowuniverse.gumroad.com/l/complete-collection" rel="noopener" class="collection-btn gumroad-button">
           Get the Complete Collection
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
         </a>
@@ -1452,9 +1452,18 @@
               return;
             }
 
+            // Deduplicate by workflow name (case-insensitive, trimmed)
+            var seen = {};
+            var uniqueResults = data.results.filter(function (r) {
+              var key = (r.name || '').trim().toLowerCase();
+              if (seen[key]) return false;
+              seen[key] = true;
+              return true;
+            });
+
             emptyEl.style.display = 'none';
-            metaEl.textContent = data.results.length + ' results in ' + elapsed + 'ms';
-            resultsEl.innerHTML = data.results.map(function (r, i) {
+            metaEl.textContent = uniqueResults.length + ' results in ' + elapsed + 'ms';
+            resultsEl.innerHTML = uniqueResults.map(function (r, i) {
               return renderFinderResult(r, i);
             }).join('');
           })
@@ -1516,5 +1525,6 @@
     })();
   </script>
 
+  <script src="https://gumroad.com/js/gumroad.js"></script>
 </body>
 </html>
