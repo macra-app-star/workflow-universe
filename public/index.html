@@ -1,0 +1,1520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Workflow Universe — 2,053 Battle-Tested n8n Automations</title>
+  <meta name="description" content="Stop building automations from scratch. Browse 2,053 curated n8n workflow templates across AI agents, marketing, sales, data ops, and DevOps. Search by what you need, find the perfect workflow.">
+  <meta name="theme-color" content="#0a0a0a">
+  <link rel="canonical" href="https://workflowuniverse.com/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Workflow Universe — 2,053 Battle-Tested n8n Automations">
+  <meta property="og:description" content="Stop building automations from scratch. Browse 2,053 curated n8n workflow templates across AI agents, marketing, sales, data ops, and DevOps.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://workflowuniverse.com/">
+  <meta property="og:image" content="https://workflowuniverse.com/og-image.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Workflow Universe — 2,053 Battle-Tested n8n Automations">
+  <meta name="twitter:description" content="Stop building automations from scratch. Browse 2,053 curated n8n workflow templates across AI agents, marketing, sales, data ops, and DevOps.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M18 2L6 18h8l-2 12 12-16h-8l2-12z' fill='%233b82f6'/%3E%3C/svg%3E">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* ── Reset & Base ──────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0a0a0a;
+      --bg-card: #111111;
+      --bg-card-hover: #161616;
+      --border: #1e1e1e;
+      --border-hover: #2a2a2a;
+      --text: #e5e5e5;
+      --text-muted: #888888;
+      --text-dim: #666666;
+      --accent: #3b82f6;
+      --accent-glow: rgba(59, 130, 246, 0.15);
+      --accent-hover: #2563eb;
+      --green: #22c55e;
+      --radius: 12px;
+      --radius-sm: 8px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* Focus styles for accessibility */
+    :focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    button:focus-visible,
+    a:focus-visible,
+    input:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ── Navigation ────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(10, 10, 10, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+
+    .nav-brand {
+      font-weight: 700;
+      font-size: 1.125rem;
+      color: var(--text);
+      letter-spacing: -0.02em;
+    }
+
+    .nav-brand span { color: var(--accent); }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--text); text-decoration: none; }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--text);
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    /* ── Hero ──────────────────────────────────────────── */
+    .hero {
+      padding: 160px 0 100px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -200px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 800px;
+      height: 800px;
+      background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(59, 130, 246, 0.08);
+      border: 1px solid rgba(59, 130, 246, 0.2);
+      border-radius: 100px;
+      padding: 6px 16px;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: var(--accent);
+      margin-bottom: 32px;
+    }
+
+    .hero-badge::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: var(--green);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.035em;
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .hero h1 .accent { color: var(--accent); }
+
+    .hero .tagline {
+      font-size: clamp(1.05rem, 2vw, 1.25rem);
+      color: var(--text-muted);
+      max-width: 560px;
+      margin: 0 auto 40px;
+      line-height: 1.6;
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 14px 32px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 0 24px rgba(59, 130, 246, 0.25);
+      text-decoration: none;
+    }
+
+    .hero-cta:hover {
+      background: var(--accent-hover);
+      transform: translateY(-1px);
+      box-shadow: 0 0 36px rgba(59, 130, 246, 0.35);
+      text-decoration: none;
+    }
+
+    .hero-cta svg { width: 18px; height: 18px; }
+
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 56px;
+    }
+
+    .stat-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 10px 20px;
+      font-size: 0.875rem;
+    }
+
+    .stat-badge strong {
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    .stat-badge span {
+      color: var(--text-muted);
+    }
+
+    /* ── Section Shared ───────────────────────────────── */
+    section { padding: 100px 0; }
+
+    .section-label {
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin-bottom: 16px;
+    }
+
+    .section-sub {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 560px;
+      line-height: 1.6;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .section-header .section-sub {
+      margin: 0 auto;
+    }
+
+    /* ── Product Cards ────────────────────────────────── */
+    .packs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 20px;
+    }
+
+    .pack-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px 28px 28px;
+      display: flex;
+      flex-direction: column;
+      transition: border-color 0.25s, box-shadow 0.25s, transform 0.2s;
+      position: relative;
+    }
+
+    .pack-card:hover {
+      border-color: var(--border-hover);
+      box-shadow: 0 0 40px var(--accent-glow);
+      transform: translateY(-3px);
+    }
+
+    .pack-icon {
+      font-size: 2.25rem;
+      margin-bottom: 16px;
+      line-height: 1;
+    }
+
+    .pack-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 12px;
+    }
+
+    .pack-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .pack-price {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--accent);
+      white-space: nowrap;
+    }
+
+    .pack-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+      margin-bottom: 20px;
+      flex-grow: 1;
+    }
+
+    .pack-integrations {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 24px;
+    }
+
+    .integration-badge {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 4px 10px;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .buy-btn {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      background: rgba(59, 130, 246, 0.1);
+      border: 1px solid rgba(59, 130, 246, 0.25);
+      border-radius: var(--radius-sm);
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: background 0.2s, border-color 0.2s;
+      text-align: center;
+      text-decoration: none;
+      font-family: inherit;
+    }
+
+    .buy-btn:hover {
+      background: rgba(59, 130, 246, 0.18);
+      border-color: rgba(59, 130, 246, 0.4);
+      text-decoration: none;
+    }
+
+    /* ── Complete Collection Banner ──────────────────── */
+    .collection-banner {
+      border-top: 1px solid var(--border);
+      padding: 80px 0;
+    }
+
+    .collection-card {
+      position: relative;
+      background: var(--bg-card);
+      border-radius: 16px;
+      padding: 48px 40px;
+      text-align: center;
+      overflow: hidden;
+      border: 2px solid transparent;
+      background-clip: padding-box;
+    }
+
+    .collection-card::before {
+      content: '';
+      position: absolute;
+      inset: -2px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, var(--accent), #8b5cf6, var(--accent));
+      z-index: -1;
+    }
+
+    .collection-card::after {
+      content: '';
+      position: absolute;
+      top: -120px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .collection-label {
+      display: inline-block;
+      background: rgba(139, 92, 246, 0.12);
+      border: 1px solid rgba(139, 92, 246, 0.3);
+      border-radius: 100px;
+      padding: 5px 16px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #a78bfa;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 16px;
+    }
+
+    .collection-card h2 {
+      font-size: clamp(1.6rem, 3.5vw, 2.25rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 8px;
+    }
+
+    .collection-pricing {
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+
+    .collection-price {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--accent);
+    }
+
+    .collection-original {
+      font-size: 1.25rem;
+      color: var(--text-dim);
+      text-decoration: line-through;
+    }
+
+    .collection-savings {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      margin-bottom: 28px;
+    }
+
+    .collection-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, var(--accent), #7c3aed);
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.1rem;
+      padding: 16px 40px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 0 32px rgba(139, 92, 246, 0.3);
+      text-decoration: none;
+    }
+
+    .collection-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 48px rgba(139, 92, 246, 0.45);
+      text-decoration: none;
+    }
+
+    /* ── Email Capture ─────────────────────────────────── */
+    .email-section {
+      border-top: 1px solid var(--border);
+      padding: 80px 0;
+    }
+
+    .email-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 48px 40px;
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .email-card h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+    }
+
+    .email-card > p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 24px;
+    }
+
+    .email-form {
+      display: flex;
+      gap: 10px;
+      max-width: 440px;
+      margin: 0 auto;
+    }
+
+    .email-input {
+      flex: 1;
+      padding: 12px 16px;
+      font-size: 0.95rem;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      color: var(--text);
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .email-input::placeholder { color: var(--text-dim); }
+    .email-input:focus { border-color: var(--accent); }
+
+    .email-submit {
+      padding: 12px 24px;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.9rem;
+      border: none;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: background 0.2s;
+      font-family: inherit;
+      white-space: nowrap;
+    }
+
+    .email-submit:hover { background: var(--accent-hover); }
+
+    .email-success {
+      display: none;
+      color: var(--green);
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-top: 16px;
+    }
+
+    @media (max-width: 480px) {
+      .email-form { flex-direction: column; }
+      .collection-card { padding: 36px 20px; }
+    }
+
+    /* ── Workflow Finder (Live Search) ─────────────────── */
+    .finder-section {
+      border-top: 1px solid var(--border);
+    }
+
+    .finder-card {
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.06) 0%, rgba(59, 130, 246, 0.02) 100%);
+      border: 1px solid rgba(59, 130, 246, 0.15);
+      border-radius: 16px;
+      padding: 56px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .finder-card::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      right: -100px;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(59, 130, 246, 0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .finder-badge {
+      display: inline-block;
+      background: rgba(34, 197, 94, 0.1);
+      border: 1px solid rgba(34, 197, 94, 0.25);
+      border-radius: 100px;
+      padding: 4px 14px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--green);
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .finder-card h2 {
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+
+    .finder-card > p {
+      color: var(--text-muted);
+      max-width: 480px;
+      margin: 0 auto 32px;
+      font-size: 1rem;
+    }
+
+    /* Search input inside finder */
+    .finder-search-wrap {
+      max-width: 640px;
+      margin: 0 auto 0;
+      position: relative;
+    }
+
+    .finder-search-wrap .search-icon {
+      position: absolute;
+      left: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-dim);
+      font-size: 1.15rem;
+      pointer-events: none;
+    }
+
+    .finder-search-input {
+      width: 100%;
+      padding: 16px 20px 16px 50px;
+      font-size: 1.05rem;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      color: var(--text);
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .finder-search-input::placeholder { color: var(--text-dim); }
+
+    .finder-search-input:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12);
+    }
+
+    /* Search results area */
+    .finder-results-area {
+      max-width: 780px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .finder-meta {
+      color: var(--text-dim);
+      font-size: 0.85rem;
+      margin-top: 20px;
+      margin-bottom: 16px;
+      text-align: left;
+    }
+
+    .finder-results {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .finder-result-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      transition: border-color 0.25s, box-shadow 0.25s, transform 0.2s;
+      opacity: 0;
+      transform: translateY(12px);
+      animation: finderSlideIn 0.3s ease forwards;
+    }
+
+    .finder-result-card:hover {
+      border-color: var(--border-hover);
+      box-shadow: 0 0 30px var(--accent-glow);
+      transform: translateY(-2px);
+    }
+
+    @keyframes finderSlideIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .finder-result-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .finder-result-rank {
+      background: var(--accent);
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.75rem;
+      min-width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .finder-result-name {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text);
+      flex: 1;
+      line-height: 1.4;
+    }
+
+    .finder-badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 8px;
+    }
+
+    .finder-pill {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 500;
+    }
+
+    .finder-pill.complexity {
+      font-weight: 700;
+    }
+
+    .finder-pill.complexity.low { background: #0d3320; color: #4ade80; }
+    .finder-pill.complexity.mid { background: #332b00; color: #facc15; }
+    .finder-pill.complexity.high { background: #3b1111; color: #f87171; }
+
+    .finder-pill.category {
+      background: #1a1a2e;
+      color: #818cf8;
+    }
+
+    .finder-pill.integration {
+      background: #1a2332;
+      color: #60a5fa;
+    }
+
+    .finder-pill.nodes {
+      background: #1e1e1e;
+      color: #888;
+    }
+
+    .finder-result-desc {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      line-height: 1.5;
+    }
+
+    .finder-empty {
+      text-align: center;
+      padding: 40px 0 20px;
+      color: var(--text-dim);
+      display: none;
+    }
+
+    .finder-empty .finder-empty-icon { font-size: 2rem; margin-bottom: 8px; }
+
+    .finder-loading {
+      text-align: center;
+      padding: 32px 0;
+      color: var(--text-dim);
+      display: none;
+    }
+
+    /* ── Stats Breakdown ──────────────────────────────── */
+    .stats-section {
+      border-top: 1px solid var(--border);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 16px;
+    }
+
+    .stat-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      text-align: center;
+      transition: border-color 0.25s;
+    }
+
+    .stat-card:hover { border-color: var(--border-hover); }
+
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .stat-label {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .stat-icon {
+      font-size: 1.5rem;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    /* ── FAQ ───────────────────────────────────────────── */
+    .faq-section {
+      border-top: 1px solid var(--border);
+    }
+
+    .faq-list {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .faq-question {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 0;
+      background: none;
+      border: none;
+      color: var(--text);
+      font-size: 1.05rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: left;
+      font-family: inherit;
+      gap: 16px;
+    }
+
+    .faq-question:hover { color: var(--accent); }
+
+    .faq-icon {
+      font-size: 1.25rem;
+      color: var(--text-muted);
+      transition: transform 0.3s;
+      flex-shrink: 0;
+    }
+
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.35s ease;
+    }
+
+    .faq-item.open .faq-answer {
+      max-height: 300px;
+    }
+
+    .faq-answer p {
+      padding-bottom: 24px;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.65;
+    }
+
+    /* ── Footer ────────────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 40px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-copy {
+      font-size: 0.85rem;
+      color: var(--text-dim);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .footer-links a {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--text); text-decoration: none; }
+
+    /* ── Mobile ────────────────────────────────────────── */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 64px;
+        left: 0;
+        right: 0;
+        background: rgba(10, 10, 10, 0.97);
+        backdrop-filter: blur(16px);
+        padding: 16px 24px 24px;
+        gap: 16px;
+        border-bottom: 1px solid var(--border);
+      }
+      .nav-toggle { display: block; }
+
+      .hero { padding: 130px 0 72px; }
+      .hero-stats { gap: 8px; }
+      .stat-badge { padding: 8px 14px; font-size: 0.8rem; }
+
+      section { padding: 72px 0; }
+
+      .packs-grid { grid-template-columns: 1fr; }
+
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+
+      .finder-card { padding: 40px 24px; }
+
+      .footer-inner { flex-direction: column; text-align: center; }
+    }
+
+    @media (max-width: 420px) {
+      .stats-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Navigation ─────────────────────────────────── -->
+  <nav>
+    <div class="nav-inner">
+      <div class="nav-brand">Workflow <span>Universe</span></div>
+      <button class="nav-toggle" aria-label="Toggle navigation menu">&#9776;</button>
+      <ul class="nav-links" role="navigation">
+        <li><a href="#packs">Packs</a></li>
+        <li><a href="#finder">Workflow Finder</a></li>
+        <li><a href="#stats">Stats</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ── Hero ───────────────────────────────────────── -->
+  <section class="hero" id="hero">
+    <div class="container">
+      <div class="hero-badge">Updated April 2026</div>
+      <h1>
+        <span class="accent">2,053</span> battle-tested<br>n8n automations
+      </h1>
+      <p class="tagline">Stop building from scratch. Production-ready workflow templates for AI agents, marketing, sales, data ops, and DevOps.</p>
+      <a href="#packs" class="hero-cta">
+        Browse Packs
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3"/></svg>
+      </a>
+      <div class="hero-stats">
+        <div class="stat-badge"><strong>2,053</strong> <span>workflows</span></div>
+        <div class="stat-badge"><strong>519</strong> <span>AI-powered</span></div>
+        <div class="stat-badge"><strong>495</strong> <span>integrations</span></div>
+        <div class="stat-badge"><strong>310</strong> <span>power workflows</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Product Packs ──────────────────────────────── -->
+  <section id="packs">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">Template Packs</div>
+        <h2 class="section-title">Choose your automation stack</h2>
+        <p class="section-sub">Each pack ships as importable n8n JSON files with full documentation. Buy once, use forever.</p>
+      </div>
+      <div class="packs-grid">
+
+        <!-- Pack 1 -->
+        <div class="pack-card">
+          <div class="pack-icon">&#129302;</div>
+          <div class="pack-header">
+            <div class="pack-title">AI Agent Powerpack</div>
+            <div class="pack-price">$49</div>
+          </div>
+          <p class="pack-desc">25 production-ready AI agent workflows. GPT-4, Gemini, memory systems, RAG pipelines, chatbots.</p>
+          <div class="pack-integrations">
+            <span class="integration-badge">OpenAI</span>
+            <span class="integration-badge">Gemini</span>
+            <span class="integration-badge">Pinecone</span>
+            <span class="integration-badge">LangChain</span>
+            <span class="integration-badge">Supabase</span>
+          </div>
+          <a href="https://workflowuniverse.gumroad.com/l/ai-agent-powerpack" target="_blank" rel="noopener" class="buy-btn" data-pack="ai-agent-powerpack">Buy Now &mdash; $49</a>
+        </div>
+
+        <!-- Pack 2 -->
+        <div class="pack-card">
+          <div class="pack-icon">&#128200;</div>
+          <div class="pack-header">
+            <div class="pack-title">Marketing Automation Suite</div>
+            <div class="pack-price">$39</div>
+          </div>
+          <p class="pack-desc">25 workflows for content, social media, email campaigns, and SEO automation.</p>
+          <div class="pack-integrations">
+            <span class="integration-badge">Mailchimp</span>
+            <span class="integration-badge">Buffer</span>
+            <span class="integration-badge">WordPress</span>
+            <span class="integration-badge">Google Analytics</span>
+            <span class="integration-badge">Ahrefs</span>
+          </div>
+          <a href="https://workflowuniverse.gumroad.com/l/marketing-suite" target="_blank" rel="noopener" class="buy-btn" data-pack="marketing-automation-suite">Buy Now &mdash; $39</a>
+        </div>
+
+        <!-- Pack 3 -->
+        <div class="pack-card">
+          <div class="pack-icon">&#127919;</div>
+          <div class="pack-header">
+            <div class="pack-title">Sales & Lead Gen Machine</div>
+            <div class="pack-price">$39</div>
+          </div>
+          <p class="pack-desc">20 workflows for CRM automation, lead qualification, outreach sequences, and pipeline management.</p>
+          <div class="pack-integrations">
+            <span class="integration-badge">HubSpot</span>
+            <span class="integration-badge">Salesforce</span>
+            <span class="integration-badge">Lemlist</span>
+            <span class="integration-badge">LinkedIn</span>
+            <span class="integration-badge">Pipedrive</span>
+          </div>
+          <a href="https://workflowuniverse.gumroad.com/l/sales-lead-gen" target="_blank" rel="noopener" class="buy-btn" data-pack="sales-lead-gen-machine">Buy Now &mdash; $39</a>
+        </div>
+
+        <!-- Pack 4 -->
+        <div class="pack-card">
+          <div class="pack-icon">&#128260;</div>
+          <div class="pack-header">
+            <div class="pack-title">Data Ops Toolkit</div>
+            <div class="pack-price">$29</div>
+          </div>
+          <p class="pack-desc">25 workflows for syncing Google Sheets, Airtable, Notion, databases, and ETL pipelines.</p>
+          <div class="pack-integrations">
+            <span class="integration-badge">Google Sheets</span>
+            <span class="integration-badge">Airtable</span>
+            <span class="integration-badge">Notion</span>
+            <span class="integration-badge">PostgreSQL</span>
+          </div>
+          <a href="https://workflowuniverse.gumroad.com/l/data-ops" target="_blank" rel="noopener" class="buy-btn" data-pack="data-ops-toolkit">Buy Now &mdash; $29</a>
+        </div>
+
+        <!-- Pack 5 -->
+        <div class="pack-card">
+          <div class="pack-icon">&#9881;&#65039;</div>
+          <div class="pack-header">
+            <div class="pack-title">DevOps & Monitoring Bundle</div>
+            <div class="pack-price">$29</div>
+          </div>
+          <p class="pack-desc">20 workflows for GitHub automation, CI/CD, alerting, and server monitoring.</p>
+          <div class="pack-integrations">
+            <span class="integration-badge">GitHub</span>
+            <span class="integration-badge">Docker</span>
+            <span class="integration-badge">Slack</span>
+            <span class="integration-badge">PagerDuty</span>
+            <span class="integration-badge">AWS</span>
+          </div>
+          <a href="https://workflowuniverse.gumroad.com/l/devops-bundle" target="_blank" rel="noopener" class="buy-btn" data-pack="devops-monitoring-bundle">Buy Now &mdash; $29</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Complete Collection Banner ──────────────────── -->
+  <section class="collection-banner" id="complete">
+    <div class="container">
+      <div class="collection-card">
+        <div class="collection-label">Best Value</div>
+        <h2>Get Everything &mdash; Complete Collection</h2>
+        <div class="collection-pricing">
+          <span class="collection-price">$99</span>
+          <span class="collection-original">$185</span>
+        </div>
+        <p class="collection-savings">All 120 workflows from every pack. 47% off.</p>
+        <a href="https://workflowuniverse.gumroad.com/l/complete-collection" target="_blank" rel="noopener" class="collection-btn">
+          Get the Complete Collection
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Email Capture ──────────────────────────────── -->
+  <section class="email-section" id="updates">
+    <div class="container">
+      <div class="email-card">
+        <h2>Get notified when we ship new packs</h2>
+        <p>Join the list. No spam, just new workflow drops and automation tips.</p>
+        <form id="emailForm" class="email-form" action="https://formspree.io/f/xplaceholder" method="POST">
+          <input type="hidden" name="_subject" value="New subscriber from Workflow Universe">
+          <input type="email" name="email" class="email-input" placeholder="you@company.com" required aria-label="Email address">
+          <button type="submit" class="email-submit">Subscribe</button>
+        </form>
+        <div id="emailSuccess" class="email-success">You are in. We will let you know when new packs drop.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Workflow Finder (Live Search) ──────────────── -->
+  <section class="finder-section" id="finder">
+    <div class="container">
+      <div class="finder-card">
+        <div class="finder-badge">Live</div>
+        <h2>Workflow Finder</h2>
+        <p>Describe what you need in plain English and instantly find the perfect n8n workflow template from our 2,053-workflow library.</p>
+
+        <div class="finder-search-wrap" role="search">
+          <span class="search-icon" aria-hidden="true">&#x1F50D;</span>
+          <input
+            type="text"
+            id="finderInput"
+            class="finder-search-input"
+            placeholder="Describe what you need... e.g., 'send slack message when github PR merged'"
+            autocomplete="off"
+            aria-label="Search workflows by description or keyword"
+          >
+        </div>
+
+        <div class="finder-results-area">
+          <div id="finderMeta" class="finder-meta"></div>
+          <div id="finderResults" class="finder-results"></div>
+          <div id="finderLoading" class="finder-loading">Searching...</div>
+          <div id="finderEmpty" class="finder-empty">
+            <div class="finder-empty-icon">&#x2205;</div>
+            <p>No workflows found. Try different keywords.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Stats Breakdown ────────────────────────────── -->
+  <section class="stats-section" id="stats">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">The Library</div>
+        <h2 class="section-title">Built from 5 years of real-world automation</h2>
+        <p class="section-sub">Every workflow has been tested in production environments and documented for quick deployment.</p>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <span class="stat-icon">&#129302;</span>
+          <div class="stat-number" data-count="816">0</div>
+          <div class="stat-label">AI Workflows</div>
+        </div>
+        <div class="stat-card">
+          <span class="stat-icon">&#128172;</span>
+          <div class="stat-number" data-count="674">0</div>
+          <div class="stat-label">Communication</div>
+        </div>
+        <div class="stat-card">
+          <span class="stat-icon">&#128202;</span>
+          <div class="stat-number" data-count="562">0</div>
+          <div class="stat-label">Data Pipelines</div>
+        </div>
+        <div class="stat-card">
+          <span class="stat-icon">&#128227;</span>
+          <div class="stat-number" data-count="340">0</div>
+          <div class="stat-label">Marketing</div>
+        </div>
+        <div class="stat-card">
+          <span class="stat-icon">&#128176;</span>
+          <div class="stat-number" data-count="310">0</div>
+          <div class="stat-label">Sales & CRM</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FAQ ────────────────────────────────────────── -->
+  <section class="faq-section" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">FAQ</div>
+        <h2 class="section-title">Common questions</h2>
+      </div>
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>What's included in each pack?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Each pack includes importable n8n JSON workflow files, a setup guide with screenshots, a list of required credentials, and notes on customizing each workflow for your use case. You also get free updates when we improve the workflows.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>What is n8n?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>n8n is an open-source workflow automation platform (similar to Zapier or Make) that you can self-host for free. It connects to hundreds of services and lets you build powerful automations with a visual editor. Our templates work with both the self-hosted and cloud versions of n8n.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>How do I import the workflows?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Open your n8n instance, go to Workflows, click the import button, and select the JSON file from the pack. The workflow will be loaded with all nodes pre-configured. You just need to add your credentials for the connected services and you're ready to go.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Do I need coding skills?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>No. n8n uses a visual drag-and-drop editor, and our workflows come fully built. You may need to adjust API keys or filter criteria, but no programming is required. Each workflow includes documentation explaining every node and how to customize it.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>What's your refund policy?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>We offer a 30-day money-back guarantee. If the workflows don't meet your expectations, email us and we'll refund your purchase in full, no questions asked.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ─────────────────────────────────────── -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-copy">&copy; 2026 Workflow Universe. All rights reserved. &nbsp;|&nbsp; Powered by <a href="https://n8n.io" target="_blank" rel="noopener">n8n</a></div>
+        <ul class="footer-links">
+          <li><a href="#">Terms</a></li>
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="https://n8n.io" target="_blank" rel="noopener">n8n.io</a></li>
+        </ul>
+      </div>
+      <div style="text-align:center;margin-top:16px;font-size:0.75rem;color:var(--text-dim);">Built with Claude</div>
+    </div>
+  </footer>
+
+  <!-- ── Scripts ────────────────────────────────────── -->
+  <script>
+    // Mobile nav toggle
+    document.querySelector('.nav-toggle').addEventListener('click', function () {
+      document.querySelector('.nav-links').classList.toggle('open');
+    });
+
+    // Close mobile nav on link click
+    document.querySelectorAll('.nav-links a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        document.querySelector('.nav-links').classList.remove('open');
+      });
+    });
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-question').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var item = this.closest('.faq-item');
+        var isOpen = item.classList.contains('open');
+
+        // Close all
+        document.querySelectorAll('.faq-item').forEach(function (i) {
+          i.classList.remove('open');
+          i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+        });
+
+        // Open clicked if it was closed
+        if (!isOpen) {
+          item.classList.add('open');
+          this.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    // Animated stat counters on scroll
+    var counted = false;
+    function animateCounters() {
+      if (counted) return;
+      var statsSection = document.getElementById('stats');
+      var rect = statsSection.getBoundingClientRect();
+      if (rect.top < window.innerHeight * 0.85) {
+        counted = true;
+        document.querySelectorAll('[data-count]').forEach(function (el) {
+          var target = parseInt(el.getAttribute('data-count'), 10);
+          var duration = 1200;
+          var start = 0;
+          var startTime = null;
+
+          function step(timestamp) {
+            if (!startTime) startTime = timestamp;
+            var progress = Math.min((timestamp - startTime) / duration, 1);
+            var eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+            el.textContent = Math.floor(eased * target).toLocaleString();
+            if (progress < 1) {
+              requestAnimationFrame(step);
+            } else {
+              el.textContent = target.toLocaleString();
+            }
+          }
+
+          requestAnimationFrame(step);
+        });
+      }
+    }
+
+    window.addEventListener('scroll', animateCounters, { passive: true });
+    animateCounters(); // check on load
+
+    // Email capture form — submit via Formspree without page reload
+    (function () {
+      var form = document.getElementById('emailForm');
+      var success = document.getElementById('emailSuccess');
+      if (!form) return;
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var data = new FormData(form);
+        fetch(form.action, {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        }).then(function (res) {
+          if (res.ok) {
+            form.style.display = 'none';
+            success.style.display = 'block';
+          } else {
+            alert('Something went wrong. Please try again.');
+          }
+        }).catch(function () {
+          alert('Network error. Please try again.');
+        });
+      });
+    })();
+
+    // ── Workflow Finder Search ──────────────────────────
+    (function () {
+      var input = document.getElementById('finderInput');
+      var resultsEl = document.getElementById('finderResults');
+      var metaEl = document.getElementById('finderMeta');
+      var loadingEl = document.getElementById('finderLoading');
+      var emptyEl = document.getElementById('finderEmpty');
+      var debounceTimer = null;
+      var abortController = null;
+
+      input.addEventListener('input', function () {
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(doFinderSearch, 300);
+      });
+
+      // Allow Enter key to trigger immediate search
+      input.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') {
+          clearTimeout(debounceTimer);
+          doFinderSearch();
+        }
+      });
+
+      function doFinderSearch() {
+        var q = input.value.trim();
+        if (!q) {
+          resultsEl.innerHTML = '';
+          metaEl.textContent = '';
+          emptyEl.style.display = 'none';
+          loadingEl.style.display = 'none';
+          return;
+        }
+
+        if (abortController) abortController.abort();
+        abortController = new AbortController();
+
+        loadingEl.style.display = 'block';
+        emptyEl.style.display = 'none';
+        resultsEl.innerHTML = '';
+        metaEl.textContent = '';
+
+        var start = performance.now();
+
+        fetch('/api/search?q=' + encodeURIComponent(q) + '&limit=10', { signal: abortController.signal })
+          .then(function (res) { return res.json(); })
+          .then(function (data) {
+            var elapsed = Math.round(performance.now() - start);
+            loadingEl.style.display = 'none';
+
+            if (!data.results || data.results.length === 0) {
+              emptyEl.style.display = 'block';
+              metaEl.textContent = '';
+              return;
+            }
+
+            emptyEl.style.display = 'none';
+            metaEl.textContent = data.results.length + ' results in ' + elapsed + 'ms';
+            resultsEl.innerHTML = data.results.map(function (r, i) {
+              return renderFinderResult(r, i);
+            }).join('');
+          })
+          .catch(function (e) {
+            if (e.name !== 'AbortError') {
+              loadingEl.style.display = 'none';
+              metaEl.textContent = 'Search error — please try again.';
+            }
+          });
+      }
+
+      function complexityClass(val) {
+        if (val <= 3) return 'low';
+        if (val <= 6) return 'mid';
+        return 'high';
+      }
+
+      function esc(str) {
+        var d = document.createElement('div');
+        d.textContent = str;
+        return d.innerHTML;
+      }
+
+      function renderFinderResult(r, i) {
+        var desc = r.description && r.description.length > 200
+          ? r.description.substring(0, 200) + '...'
+          : (r.description || '');
+        var cplx = r.complexity != null ? r.complexity.toFixed(1) : '?';
+        var cls = complexityClass(r.complexity);
+
+        var cats = (r.categories || []).map(function (c) {
+          return '<span class="finder-pill category">' + esc(c) + '</span>';
+        }).join('');
+
+        var intgs = (r.integrations || []).slice(0, 6).map(function (ig) {
+          return '<span class="finder-pill integration">' + esc(ig) + '</span>';
+        }).join('');
+
+        var moreIntgs = (r.integrations || []).length > 6
+          ? '<span class="finder-pill integration">+' + (r.integrations.length - 6) + ' more</span>'
+          : '';
+
+        var delay = Math.min(i * 50, 400);
+
+        return '<div class="finder-result-card" style="animation-delay: ' + delay + 'ms">'
+          + '<div class="finder-result-header">'
+          +   '<div class="finder-result-rank">' + (i + 1) + '</div>'
+          +   '<div class="finder-result-name">' + esc(r.name) + '</div>'
+          + '</div>'
+          + '<div class="finder-badge-row">'
+          +   '<span class="finder-pill complexity ' + cls + '">Complexity ' + cplx + '/10</span>'
+          +   '<span class="finder-pill nodes">' + (r.node_count || '?') + ' nodes</span>'
+          +   cats
+          + '</div>'
+          + '<div class="finder-badge-row">' + intgs + moreIntgs + '</div>'
+          + '<div class="finder-result-desc">' + esc(desc) + '</div>'
+          + '</div>';
+      }
+    })();
+  </script>
+
+</body>
+</html>

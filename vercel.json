@@ -1,0 +1,27 @@
+{
+  "buildCommand": "",
+  "outputDirectory": "public",
+  "rewrites": [
+    { "source": "/api/search", "destination": "/api/search" },
+    { "source": "/api/workflow", "destination": "/api/workflow" }
+  ],
+  "functions": {
+    "api/search.js": {
+      "maxDuration": 10,
+      "memory": 1024
+    },
+    "api/workflow.js": {
+      "maxDuration": 5,
+      "memory": 512
+    }
+  },
+  "headers": [
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Access-Control-Allow-Methods", "value": "GET,OPTIONS" }
+      ]
+    }
+  ]
+}

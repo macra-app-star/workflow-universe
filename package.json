@@ -1,0 +1,9 @@
+{
+  "name": "workflow-universe",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Workflow Universe - 2,053 battle-tested n8n automations with search",
+  "engines": {
+    "node": ">=18"
+  }
+}
